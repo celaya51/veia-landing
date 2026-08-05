@@ -1,0 +1,27 @@
+---
+const clientes = [
+  { nombre: "Legend Horizon Living", logo: "https://celaya51.github.io/VEIA/images/logo-legend.webp", href: "https://legendtower.com.mx/" },
+  { nombre: "Uditore", logo: "https://celaya51.github.io/VEIA/images/logo-uditore-full.png", href: "https://uditore.mx/" },
+  { nombre: "Tocomadera", logo: "https://celaya51.github.io/VEIA/images/logo-tocomadera.png", href: "https://tocomadera.mx/" },
+  { nombre: "M de Maíz", logo: "https://celaya51.github.io/VEIA/images/logo-mdemaiz-lg.png", href: "https://mdemaiz.mx/" },
+];
+---
+
+<section class="seccion seccion--gris" id="clientes">
+  <div class="contenedor">
+    <div class="revelar">
+      <span class="antetitulo">Trabajo real</span>
+      <h2>Negocios que ya tienen presencia digital</h2>
+    </div>
+    <div class="v-clientes revelar" style="margin-top:2.4rem">
+      {clientes.map((c) => (
+        <a class="v-cliente" href={c.href} target="_blank" rel="noopener">
+          <img src={c.logo} alt={c.nombre} loading="lazy" />
+        </a>
+      ))}
+    </div>
+    <div class="revelar" style="margin-top:2.2rem;text-align:center">
+      <a class="boton boton--contorno" href="https://celaya51.github.io/VEIA/portafolio.html" target="_blank" rel="noopener">Ver portafolio</a>
+    </div>
+  </div>
+</section>

@@ -517,6 +517,80 @@ p {
 .v-tarjeta p {
   font-size: 0.98rem;
 }
+.v-tarjeta__ico {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 0.9rem;
+}
+
+/* ---- Oferta / precio ---- */
+.v-oferta {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: var(--blanco);
+  border: 2px solid var(--magenta);
+  border-radius: var(--radio-grande);
+  padding: clamp(2rem, 5vw, 3.4rem);
+  box-shadow: 0 22px 55px rgb(242 0 109 / 0.12);
+}
+.v-oferta h2 {
+  margin-bottom: 0;
+}
+.v-mini {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1.3rem;
+}
+.v-mini li {
+  font-size: 0.95rem;
+  color: var(--tinta);
+}
+.v-mini li::before {
+  content: "✓";
+  color: var(--magenta);
+  font-weight: 800;
+  margin-right: 0.6rem;
+}
+.v-oferta__precio {
+  font-family: var(--fuente-titulos);
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--oscuro);
+}
+.v-oferta__precio-lado p {
+  margin-top: 0.35rem;
+}
+
+/* ---- Clientes ---- */
+.v-clientes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.1rem;
+}
+.v-cliente {
+  display: grid;
+  place-items: center;
+  min-height: 140px;
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.v-cliente:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgb(30 32 36 / 0.1);
+}
+.v-cliente img {
+  max-width: 170px;
+  max-height: 64px;
+  object-fit: contain;
+}
 
 /* ---- Servicios ---- */
 .v-servicios__encabezado {
@@ -748,6 +822,16 @@ p {
   }
   .v-rejilla {
     grid-template-columns: 1fr;
+  }
+  .v-oferta {
+    grid-template-columns: 1fr;
+    padding: 1.8rem 1.4rem;
+  }
+  .v-clientes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .v-cliente {
+    min-height: 110px;
   }
   .v-servicios__encabezado {
     flex-direction: column;

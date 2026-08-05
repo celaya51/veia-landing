@@ -1,0 +1,29 @@
+---
+const piezas = [
+  { num: "01", titulo: "Sitio web profesional", texto: "Una landing clara, rápida y adaptada a celular, con el nivel visual y funcional de nuestros proyectos recientes.", ico: "🌐" },
+  { num: "02", titulo: "Presencia en Google", texto: "Configuramos u optimizamos la ficha de tu negocio para que aparezcas mejor en búsquedas locales y Maps.", ico: "📍" },
+  { num: "03", titulo: "WhatsApp conectado", texto: "Botones, mensajes y llamadas a la acción para convertir visitas en conversaciones comerciales.", ico: "💬" },
+];
+---
+
+<section class="seccion seccion--gris" id="piezas">
+  <div class="contenedor">
+    <div class="revelar">
+      <span class="antetitulo">Lo esencial para empezar</span>
+      <h2>Tres piezas trabajando juntas</h2>
+      <p class="destacado" style="margin-top:0.8rem">
+        No necesitas hacer de todo. Necesitas que te encuentren, entiendan lo que vendes y puedan contactarte.
+      </p>
+    </div>
+    <div class="v-rejilla v-rejilla--3 revelar" style="margin-top:2.6rem">
+      {piezas.map((p) => (
+        <article class="v-tarjeta">
+          <span class="v-tarjeta__ico" aria-hidden="true">{p.ico}</span>
+          <span class="v-tarjeta__num">{p.num}</span>
+          <h3>{p.titulo}</h3>
+          <p>{p.texto}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

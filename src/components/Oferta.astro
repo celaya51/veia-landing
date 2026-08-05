@@ -1,0 +1,33 @@
+---
+const incluye = [
+  "Diseño personalizado",
+  "Versión móvil",
+  "Formulario, mapa y contacto",
+  "Entrega estimada de 3 a 5 días hábiles",
+];
+---
+
+<section class="seccion" id="precio">
+  <div class="contenedor">
+    <div class="v-oferta revelar">
+      <div>
+        <span class="antetitulo">Precio de lanzamiento</span>
+        <h2>Presencia digital para negocios locales</h2>
+        <p class="destacado" style="margin-top:0.9rem">
+          Landing profesional de hasta 7 secciones, Google Business Profile, WhatsApp, SEO local básico,
+          publicación y dos rondas de cambios.
+        </p>
+        <ul class="v-mini">
+          {incluye.map((i) => <li>{i}</li>)}
+        </ul>
+      </div>
+      <div class="v-oferta__precio-lado">
+        <div class="v-oferta__precio">$7,500</div>
+        <p>MXN · pago único</p>
+        <a class="boton boton--oscuro" href="https://celaya51.github.io/VEIA/servicios-paquetes.html" target="_blank" rel="noopener" style="margin-top:1.1rem">
+          Ver todo lo que incluye
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
