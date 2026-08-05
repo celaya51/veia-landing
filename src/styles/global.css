@@ -884,7 +884,7 @@ p {
     width: 100%;
   }
   .v-clientes {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
   .v-cliente {
     min-height: 110px;
