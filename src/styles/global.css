@@ -215,6 +215,11 @@ p {
   letter-spacing: 0.02em;
   color: var(--oscuro);
 }
+.v-marca__logo {
+  display: block;
+  height: auto;
+  width: auto;
+}
 .v-marca__punto {
   width: 14px;
   height: 14px;
@@ -383,6 +388,10 @@ p {
   border-radius: 50%;
   background: var(--degradado-banda);
   flex: none;
+}
+.v-telefono__logo-img {
+  height: 14px;
+  width: auto;
 }
 .v-telefono__logo + span {
   font-family: var(--fuente-titulos);
@@ -564,6 +573,38 @@ p {
 }
 .v-oferta__precio-lado p {
   margin-top: 0.35rem;
+}
+.v-oferta__nota {
+  font-size: 0.85rem;
+  color: var(--gris-medio);
+  margin-top: 0.5rem !important;
+}
+
+/* ---- Tarjetas de opcionales ---- */
+.v-tarjeta--opcion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.v-tarjeta--opcion h3 {
+  margin-bottom: 0;
+}
+.v-precio {
+  font-family: var(--fuente-titulos);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--oscuro);
+}
+.v-precio small {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--gris-medio);
+}
+.v-tarjeta--opcion .boton {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 /* ---- Clientes ---- */
@@ -826,6 +867,9 @@ p {
   .v-oferta {
     grid-template-columns: 1fr;
     padding: 1.8rem 1.4rem;
+  }
+  .v-tarjeta--opcion .boton {
+    width: 100%;
   }
   .v-clientes {
     grid-template-columns: repeat(2, 1fr);

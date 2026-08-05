@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL;
 const enlaces = [
   { href: "#inicio", texto: "Inicio" },
   { href: "#piezas", texto: "Servicios" },
@@ -10,8 +11,8 @@ const enlaces = [
 
 <header class="v-header" id="inicio">
   <div class="contenedor v-header__inner">
-<a class="v-marca" href="#inicio" aria-label="VEIA · Presencia digital para negocios locales">
-      <span class="v-marca__punto"></span>VEIA
+    <a class="v-marca" href="#inicio" aria-label="VEIA · Presencia digital para negocios locales">
+      <img class="v-marca__logo" src={`${base}img/logo-veia.png`} alt="VEIA" width="110" height="40" />
     </a>
 
     <nav class="v-nav" aria-label="Secciones">
