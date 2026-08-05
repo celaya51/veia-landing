@@ -627,6 +627,10 @@ p {
   transform: translateY(-2px);
   box-shadow: 0 10px 26px rgb(30 32 36 / 0.1);
 }
+.v-cliente--oscuro {
+  background: #223817;
+  border-color: #223817;
+}
 .v-cliente img {
   max-width: 170px;
   max-height: 64px;
