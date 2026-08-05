@@ -1,4 +1,5 @@
 ---
+const { raiz = "" } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const contacto = [
   { texto: "WhatsApp: 56 5989 8908", href: "https://wa.me/525659898908" },
@@ -11,7 +12,7 @@ const contacto = [
   <div class="contenedor">
     <div class="v-footer__grid">
       <div>
-        <a class="v-marca" href="#inicio" aria-label="VEIA · Presencia digital para negocios locales">
+        <a class="v-marca" href={`${raiz}#inicio`} aria-label="VEIA · Presencia digital para negocios locales">
           <img class="v-marca__logo" src={`${base}img/veia-logo-blanco.png`} alt="VEIA" width="97" height="30" />
         </a>
         <p style="max-width:30em">Digitalizamos negocios locales: sitio web, presencia en Google y WhatsApp listos para vender.</p>
@@ -19,9 +20,9 @@ const contacto = [
       <div>
         <h4>Explorar</h4>
         <ul>
-          <li><a href="#piezas">Servicios</a></li>
-          <li><a href="#precio">Precios</a></li>
-          <li><a href="#clientes">Portafolio</a></li>
+          <li><a href={`${raiz}#piezas`}>Servicios</a></li>
+          <li><a href={`${raiz}#precio`}>Precios</a></li>
+          <li><a href={`${raiz}#clientes`}>Portafolio</a></li>
         </ul>
       </div>
       <div>
