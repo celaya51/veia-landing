@@ -1,16 +1,16 @@
 ---
 const enlaces = [
   { href: "#inicio", texto: "Inicio" },
-  { href: "#servicios", texto: "Servicios" },
-  { href: "#como", texto: "Cómo trabajamos" },
-  { href: "#cta", texto: "Precios" },
+  { href: "#piezas", texto: "Servicios" },
+  { href: "#precio", texto: "Precios" },
+  { href: "#clientes", texto: "Portafolio" },
   { href: "#contacto", texto: "Contacto" },
 ];
 ---
 
 <header class="v-header" id="inicio">
   <div class="contenedor v-header__inner">
-    <a class="v-marca" href="#inicio" aria-label="VEIA · Que tu marca resuene">
+<a class="v-marca" href="#inicio" aria-label="VEIA · Presencia digital para negocios locales">
       <span class="v-marca__punto"></span>VEIA
     </a>
 
@@ -19,7 +19,7 @@ const enlaces = [
     </nav>
 
     <div class="v-header__acciones">
-      <a class="boton boton--oscuro" href="https://wa.me/525659898908?text=Hola%20VEIA,%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">
+      <a class="boton boton--oscuro" href="https://wa.me/525659898908?text=Hola%20VEIA,%20quiero%20digitalizar%20mi%20negocio" target="_blank" rel="noopener">
         Cotizar
       </a>
       <button class="v-menu-btn" data-menu-btn aria-label="Abrir menú" aria-expanded="false">
@@ -31,7 +31,7 @@ const enlaces = [
 
 <div class="v-menu-movil" data-menu-movil>
   {enlaces.map((e) => <a href={e.href}>{e.texto}</a>)}
-  <a class="boton boton--degradado" style="margin-top:1.2rem;width:100%" href="https://wa.me/525659898908?text=Hola%20VEIA,%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">
+  <a class="boton boton--degradado" style="margin-top:1.2rem;width:100%" href="https://wa.me/525659898908?text=Hola%20VEIA,%20quiero%20digitalizar%20mi%20negocio" target="_blank" rel="noopener">
     Cotizar
   </a>
 </div>
