@@ -220,6 +220,10 @@ p {
   height: auto;
   width: auto;
 }
+.v-header .v-marca__logo {
+  height: 30px;
+  width: auto;
+}
 .v-footer .v-marca__logo {
   height: 30px;
   width: auto;
@@ -852,11 +856,6 @@ p {
   }
   .v-menu-btn {
     display: none;
-  }
-  /* Escritorio: logo del header a la mitad (20px en vez de 40px) */
-  .v-header .v-marca__logo {
-    height: 20px;
-    width: auto;
   }
 }
 
