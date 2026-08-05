@@ -1,0 +1,37 @@
+---
+const enlaces = [
+  { href: "#inicio", texto: "Inicio" },
+  { href: "#servicios", texto: "Servicios" },
+  { href: "#como", texto: "Cómo trabajamos" },
+  { href: "#cta", texto: "Precios" },
+  { href: "#contacto", texto: "Contacto" },
+];
+---
+
+<header class="v-header" id="inicio">
+  <div class="contenedor v-header__inner">
+    <a class="v-marca" href="#inicio" aria-label="VEIA · Que tu marca resuene">
+      <span class="v-marca__punto"></span>VEIA
+    </a>
+
+    <nav class="v-nav" aria-label="Secciones">
+      {enlaces.map((e) => <a href={e.href}>{e.texto}</a>)}
+    </nav>
+
+    <div class="v-header__acciones">
+      <a class="boton boton--oscuro" href="https://wa.me/525659898908?text=Hola%20VEIA,%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">
+        Cotizar
+      </a>
+      <button class="v-menu-btn" data-menu-btn aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="v-menu-movil" data-menu-movil>
+  {enlaces.map((e) => <a href={e.href}>{e.texto}</a>)}
+  <a class="boton boton--degradado" style="margin-top:1.2rem;width:100%" href="https://wa.me/525659898908?text=Hola%20VEIA,%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">
+    Cotizar
+  </a>
+</div>

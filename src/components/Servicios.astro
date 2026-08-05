@@ -1,0 +1,31 @@
+---
+const servicios = [
+  { num: "01", titulo: "Sitio Express", texto: "Tu sitio web en una sola videollamada o presencial, hecho contigo y listo el mismo día.", degradado: "banda" },
+  { num: "02", titulo: "Redes y marketing", texto: "Mantenemos tus redes activas, creamos contenido y atraemos clientes." },
+  { num: "03", titulo: "Diseño y branding", texto: "Tu logo e identidad para que tu negocio se vea serio y memorable." },
+  { num: "04", titulo: "Foto y video", texto: "Fotografía profesional y video corto que hacen que tu marca destaque." },
+  { num: "05", titulo: "Soluciones a la medida", texto: "Herramientas para tu negocio (inventario, citas, ventas) sin pagar un ERP gigante.", degradado: "tarjeta" },
+  { num: "06", titulo: "Infraestructura y redes", texto: "Diagnóstico, internet, equipos y respaldos que sí funcionan." },
+];
+---
+
+<section class="seccion seccion--gris" id="servicios">
+  <div class="contenedor">
+    <div class="v-servicios__encabezado revelar">
+      <div>
+        <span class="antetitulo">Lo que hacemos</span>
+        <h2>Todo para digitalizar tu negocio</h2>
+      </div>
+      <p class="destacado">Desde tu primera página hasta herramientas a la medida. Tú eliges hasta dónde.</p>
+    </div>
+    <div class="v-rejilla v-rejilla--3 revelar">
+      {servicios.map((s) => (
+        <article class:list={["v-tarjeta", s.degradado === "banda" && "v-tarjeta--degradado", s.degradado === "tarjeta" && "v-tarjeta--degradado-2"]}>
+          <span class="v-tarjeta__num">{s.num}</span>
+          <h3>{s.titulo}</h3>
+          <p>{s.texto}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

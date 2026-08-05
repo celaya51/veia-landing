@@ -1,0 +1,38 @@
+---
+const contacto = [
+  { texto: "WhatsApp: 56 5989 8908", href: "https://wa.me/525659898908" },
+  { texto: "contacto@veia.com.mx", href: "mailto:contacto@veia.com.mx" },
+  { texto: "Guadalajara · Zapopan, Jal.", href: null },
+];
+---
+
+<footer class="v-footer" id="contacto">
+  <div class="contenedor">
+    <div class="v-footer__grid">
+      <div>
+        <a class="v-marca" href="#inicio" aria-label="VEIA · Que tu marca resuene">
+          <span class="v-marca__punto"></span>VEIA
+        </a>
+        <p style="max-width:30em">Que tu marca resuene. Llevamos tu negocio a internet, sin complicaciones.</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Sitio Express</a></li>
+          <li><a href="#servicios">Redes y marketing</a></li>
+          <li><a href="#servicios">Diseño y branding</a></li>
+          <li><a href="#servicios">Soluciones IT</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          {contacto.map((c) => (
+            <li>{c.href ? <a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel={c.href.startsWith("http") ? "noopener" : undefined}>{c.texto}</a> : c.texto}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div class="v-footer__bottom">© <span id="anio"></span> VEIA · Guadalajara · Zapopan, Jal.</div>
+  </div>
+</footer>

@@ -1,0 +1,53 @@
+---
+const whatsapp = "https://wa.me/525659898908?text=Hola%20VEIA,%20quiero%20informaci%C3%B3n";
+const confianza = [
+  "📍 Hecho en Guadalajara",
+  "🤝 Lo hacemos contigo",
+  "🌱 Ideal si vas empezando",
+];
+---
+
+<section class="v-hero" data-hero>
+  <div class="contenedor v-hero__grid">
+    <div class="v-hero__texto revelar">
+      <span class="antetitulo">Marketing y tecnología para tu negocio</span>
+      <h1>Que tu marca <span class="acento-serif">resuene</span>.</h1>
+      <p class="destacado">
+        Llevamos tu negocio a internet sin complicaciones: tu sitio web, tus redes activas y
+        herramientas que te hacen la vida más fácil. Lo hacemos <strong>contigo</strong>, paso a paso.
+      </p>
+      <div class="v-hero__acciones">
+        <a class="boton boton--degradado" href={whatsapp} target="_blank" rel="noopener">
+          Escríbenos por WhatsApp
+        </a>
+        <a class="boton boton--contorno" href="#servicios">Ver servicios</a>
+      </div>
+      <div class="v-confianza">
+        {confianza.map((c) => <span>{c}</span>)}
+      </div>
+    </div>
+
+    <div class="v-hero__mockup revelar">
+      <div class="v-blob" aria-hidden="true"></div>
+      <div class="v-telefono" aria-hidden="true">
+        <div class="v-telefono__barra">
+          <span class="v-telefono__logo"></span>
+          <span>VEIA</span>
+        </div>
+        <div class="v-telefono__pantalla">
+          <div class="v-telefono__hero-mini">
+            Tu marca, <em>en internet</em>
+          </div>
+          <div class="v-linea v-linea--media"></div>
+          <div class="v-linea v-linea--corta"></div>
+          <div class="v-telefono__tarjeta">
+            <span class="v-linea" style="width:70%"></span>
+            <span class="v-linea v-linea--media"></span>
+          </div>
+          <div class="v-linea v-linea--media"></div>
+          <span class="v-telefono__pildora">Cotizar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
