@@ -1,0 +1,93 @@
+---
+const wa = (texto) => "https://wa.me/525659898908?text=" + encodeURIComponent(texto);
+
+const principal = {
+  etiqueta: "Producto principal",
+  nombre: "Presencia digital para negocios locales",
+  descripcion:
+    "Un proyecto con el nivel de una landing como SANHER: diseño personalizado, contenido bien presentado, versión móvil y ajustes antes de publicar.",
+  precio: "$7,500",
+  pago: "MXN · pago único",
+  nota: "50% para iniciar y 50% al aprobar el sitio.",
+  href: wa("Hola VEIA, quiero el paquete de presencia digital de $7,500"),
+  incluye: [
+    "Landing profesional de hasta 7 secciones",
+    "Diseño adaptado a la identidad de tu negocio",
+    "Versión optimizada para celular, tableta y computadora",
+    "Botones y mensajes directos a WhatsApp",
+    "Formulario de contacto, mapa y datos del negocio",
+    "Configuración u optimización básica de Google Business Profile",
+    "SEO local básico: títulos, descripciones y estructura",
+    "Dos rondas de cambios incluidas",
+    "Publicación y conexión del dominio",
+    "Entrega estimada de 3 a 5 días hábiles después de recibir materiales",
+  ],
+};
+
+const opcionales = [
+  {
+    nombre: "Mantenimiento",
+    precio: "$900",
+    unidad: "/mes",
+    texto: "Respaldos, revisión técnica y hasta dos cambios pequeños al mes.",
+    href: wa("Hola VEIA, quiero el servicio de mantenimiento de $900/mes"),
+  },
+  {
+    nombre: "Cambios adicionales",
+    precio: "Desde $500",
+    unidad: "",
+    texto: "Ajustes fuera de las dos rondas incluidas, según alcance.",
+    href: wa("Hola VEIA, quiero cotizar cambios adicionales a mi sitio"),
+  },
+  {
+    nombre: "Branding básico",
+    precio: "Desde $3,500",
+    unidad: "",
+    texto: "Logo, paleta, tipografías y guía visual sencilla.",
+    href: wa("Hola VEIA, quiero el branding básico desde $3,500"),
+  },
+];
+---
+
+<section class="seccion" id="precio">
+  <div class="contenedor">
+    <div class="revelar">
+      <span class="antetitulo">Precios</span>
+      <h2>Paquetes y servicios</h2>
+      <p class="destacado" style="margin-top:0.8rem">
+        Elige el alcance que necesitas; cada opción se cotiza directo por WhatsApp.
+      </p>
+    </div>
+
+    <div class="v-oferta revelar" style="margin-top:2.6rem">
+      <div>
+        <span class="antetitulo">{principal.etiqueta}</span>
+        <h2>{principal.nombre}</h2>
+        <p class="destacado" style="margin-top:0.9rem">{principal.descripcion}</p>
+        <ul class="v-mini">
+          {principal.incluye.map((i) => <li>{i}</li>)}
+        </ul>
+      </div>
+      <div class="v-oferta__precio-lado">
+        <div class="v-oferta__precio">{principal.precio}</div>
+        <p>{principal.pago}</p>
+        <p class="v-oferta__nota">{principal.nota}</p>
+        <a class="boton boton--degradado" href={principal.href} target="_blank" rel="noopener" style="margin-top:1.2rem">
+          Cotizar por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="v-rejilla v-rejilla--3 revelar" style="margin-top:1.2rem">
+      {opcionales.map((o) => (
+        <article class="v-tarjeta v-tarjeta--opcion">
+          <span class="antetitulo">Opcional</span>
+          <h3>{o.nombre}</h3>
+          <div class="v-precio">{o.precio}{o.unidad ? <small>{o.unidad}</small> : null}</div>
+          <p>{o.texto}</p>
+          <a class="boton boton--contorno" href={o.href} target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
