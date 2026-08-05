@@ -849,6 +849,11 @@ p {
   .v-menu-btn {
     display: none;
   }
+  /* Escritorio: logo del header a la mitad (20px en vez de 40px) */
+  .v-header .v-marca__logo {
+    height: 20px;
+    width: auto;
+  }
 }
 
 /* ---- Móvil (el breakpoint que más importa, igual que Framer <= 809px) ---- */
