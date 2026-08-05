@@ -220,6 +220,10 @@ p {
   height: auto;
   width: auto;
 }
+.v-footer .v-marca__logo {
+  height: 30px;
+  width: auto;
+}
 .v-marca__punto {
   width: 14px;
   height: 14px;
