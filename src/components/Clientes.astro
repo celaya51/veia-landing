@@ -1,9 +1,10 @@
 ---
+const base = import.meta.env.BASE_URL;
 const clientes = [
   { nombre: "Legend Horizon Living", logo: "https://celaya51.github.io/VEIA/images/logo-legend.webp", href: "https://legendtower.com.mx/" },
   { nombre: "Uditore", logo: "https://celaya51.github.io/VEIA/images/logo-uditore-full.png", href: "https://uditore.mx/" },
   { nombre: "Tocomadera", logo: "https://celaya51.github.io/VEIA/images/logo-tocomadera.png", href: "https://tocomadera.mx/" },
-  { nombre: "M de Maíz", logo: "https://celaya51.github.io/VEIA/images/logo-mdemaiz-lg.png", href: "https://mdemaiz.mx/" },
+  { nombre: "Ascendia", logo: `${base}img/ascendia-logo.png`, href: "https://ascendia.mx/", oscuro: true },
 ];
 ---
 
@@ -15,7 +16,7 @@ const clientes = [
     </div>
     <div class="v-clientes revelar" style="margin-top:2.4rem">
       {clientes.map((c) => (
-        <a class="v-cliente" href={c.href} target="_blank" rel="noopener">
+        <a class:list={["v-cliente", c.oscuro && "v-cliente--oscuro"]} href={c.href} target="_blank" rel="noopener">
           <img src={c.logo} alt={c.nombre} loading="lazy" />
         </a>
       ))}
