@@ -1,0 +1,20 @@
+---
+const items = [
+  "Sitio Express",
+  "Redes y marketing",
+  "Diseño y branding",
+  "Foto y video",
+  "Soluciones a la medida",
+  "Infraestructura y redes",
+];
+---
+
+<div class="v-marquesina" aria-hidden="true">
+  <div class="v-marquesina__pista">
+    {[0, 1].map((copia) => (
+      <div class="v-marquesina__item" key={copia}>
+        {items.map((i) => <span>{i}</span>)}
+      </div>
+    ))}
+  </div>
+</div>

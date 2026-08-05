@@ -1,0 +1,74 @@
+---
+const { titulo = "VEIA · Que tu marca resuene", descripcion = "VEIA: sitios web, redes sociales, diseño y soluciones de tecnología para negocios de Guadalajara. Lo hacemos contigo, sin complicaciones." } = Astro.props;
+import "../styles/global.css";
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    <meta name="description" content={descripcion} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Tipografías del landing de referencia: Satoshi + Instrument Serif -->
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  </head>
+  <body>
+    <slot />
+
+    <script>
+      // Aparición suave de secciones al hacer scroll (equivalente a las
+      // animaciones de entrada del landing de Framer).
+      const observador = new IntersectionObserver(
+        (entradas) => {
+          for (const e of entradas) {
+            if (e.isIntersecting) {
+              e.target.classList.add("visto");
+              observador.unobserve(e.target);
+            }
+          }
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll(".revelar").forEach((el) => observador.observe(el));
+
+      // Menú móvil
+      const menuBtn = document.querySelector("[data-menu-btn]");
+      const menu = document.querySelector("[data-menu-movil]");
+      if (menuBtn && menu) {
+        menuBtn.addEventListener("click", () => {
+          const abierto = menu.classList.toggle("abierto");
+          menuBtn.classList.toggle("activo", abierto);
+          document.body.classList.toggle("menu-abierto", abierto);
+        });
+        menu.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            menu.classList.remove("abierto");
+            menuBtn.classList.remove("activo");
+            document.body.classList.remove("menu-abierto");
+          })
+        );
+      }
+
+      // Botón flotante de WhatsApp aparece al salir del hero
+      const flotante = document.querySelector(".ws-flotante");
+      const hero = document.querySelector("[data-hero]");
+      if (flotante && hero) {
+        new IntersectionObserver(
+          ([e]) => flotante.classList.toggle("visible", !e.isIntersecting),
+          { rootMargin: "-20% 0px 0px 0px" }
+        ).observe(hero);
+      }
+
+      // Año del footer
+      const anio = document.getElementById("anio");
+      if (anio) anio.textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>
