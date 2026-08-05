@@ -702,22 +702,16 @@ p {
 /* ---- Banda CTA ---- */
 .v-cta {
   border-radius: var(--radio-grande);
-  background: var(--degradado-banda);
+  background:
+    radial-gradient(120% 130% at 15% 0%, rgba(252, 221, 66, 0.55) 0%, transparent 45%),
+    radial-gradient(120% 130% at 90% 100%, rgba(158, 0, 161, 0.5) 0%, transparent 50%),
+    radial-gradient(90% 120% at 80% 10%, rgba(255, 0, 119, 0.4) 0%, transparent 45%),
+    var(--degradado-banda);
   text-align: center;
   padding: clamp(3rem, 7vw, 5.5rem) clamp(1.5rem, 5vw, 4rem);
   color: var(--blanco);
   position: relative;
   overflow: hidden;
-}
-.v-cta::before {
-  content: "";
-  position: absolute;
-  inset: -60px -120px;
-  background: var(--degradado-blob);
-  filter: blur(90px);
-  -webkit-filter: blur(90px);
-  opacity: 0.45;
-  pointer-events: none;
 }
 .v-cta > * {
   position: relative;
