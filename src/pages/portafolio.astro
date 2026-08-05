@@ -1,0 +1,80 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CTA from "../components/CTA.astro";
+
+const raiz = import.meta.env.BASE_URL;
+
+const clientes = [
+  { nombre: "Legend Horizon Living", logo: "https://celaya51.github.io/VEIA/images/logo-legend.webp", href: "https://legendtower.com.mx/" },
+  { nombre: "Uditore", logo: "https://celaya51.github.io/VEIA/images/logo-uditore-full.png", href: "https://uditore.mx/" },
+  { nombre: "Tocomadera", logo: "https://celaya51.github.io/VEIA/images/logo-tocomadera.png", href: "https://tocomadera.mx/" },
+  { nombre: "Ascendia", logo: `${raiz}img/ascendia-logo.png`, href: "https://ascendia.mx/", oscuro: true },
+];
+
+const plantillas = [
+  { nombre: "Estética/Belleza", slug: "belleza", icono: "💅" },
+  { nombre: "Taller/Servicios", slug: "taller", icono: "🔧" },
+  { nombre: "Tienda/Comercio", slug: "tienda", icono: "🛍️" },
+  { nombre: "Salud/Consultorio", slug: "salud", icono: "🩺" },
+  { nombre: "Profesional/Servicios", slug: "profesional", icono: "💼" },
+];
+---
+
+<Base titulo='Portafolio · VEIA'>
+  <Header raiz={raiz} />
+  <main>
+    <!-- Hero compacto -->
+    <section class="v-hero" style="padding-block:clamp(2.6rem,6vw,4.5rem);padding-inline:0">
+      <div class="contenedor">
+        <div class="v-hero__texto revelar">
+          <span class="antetitulo">Trabajo real</span>
+          <h1>Proyectos que hablan por nosotros</h1>
+          <p class="destacado">Estos son algunos de los sitios web que hemos creado para nuestros clientes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clientes -->
+    <section class="seccion seccion--gris">
+      <div class="contenedor">
+        <div class="revelar">
+          <span class="antetitulo">Clientes</span>
+          <h2>Negocios que ya tienen presencia digital</h2>
+        </div>
+        <div class="v-clientes revelar" style="margin-top:2.4rem">
+          {clientes.map((c) => (
+            <a class:list={["v-cliente", c.oscuro && "v-cliente--oscuro"]} href={c.href} target="_blank" rel="noopener">
+              <img src={c.logo} alt={c.nombre} loading="lazy" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Plantillas demo -->
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="revelar">
+          <span class="antetitulo">Plantillas demo</span>
+          <h2>Demos listos para personalizar</h2>
+          <p class="destacado" style="margin-top:0.8rem">
+            Explora plantillas base que adaptamos al giro y la identidad de cada negocio.
+          </p>
+        </div>
+        <div class="v-rejilla v-rejilla--3 revelar" style="margin-top:2.4rem">
+          {plantillas.map((p) => (
+            <a class="v-tarjeta" href={`https://celaya51.github.io/VEIA/plantillas/${p.slug}/`} target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+              <span class="v-tarjeta__ico">{p.icono}</span>
+              <h3>{p.nombre}</h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer raiz={raiz} />
+</Base>
