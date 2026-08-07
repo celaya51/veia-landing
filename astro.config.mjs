@@ -1,10 +1,12 @@
 import { defineConfig } from "astro/config";
 
-// Sitio estático: mismo modelo de despliegue que SANHER (GitHub Pages / host estático).
+// Sitio estático: se despliega en GitHub Pages y en el VPS (veia.com.mx).
+// - GitHub Pages de proyecto: base /veia-landing/ (por defecto).
+// - VPS en la raíz del dominio: ASTRO_BASE=/ npm run build (ver deploy-vps.sh).
+const base = process.env.ASTRO_BASE || "/veia-landing/";
+
 export default defineConfig({
   output: "static",
   site: "https://celaya51.github.io/veia-landing/",
-  // Necesario en GitHub Pages de proyecto: el sitio vive bajo /veia-landing/
-  // y sin base los assets (CSS/JS) se buscan en la raíz del dominio (404).
-  base: "/veia-landing/",
+  base,
 });
