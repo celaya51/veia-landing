@@ -7,9 +7,10 @@ import CTA from "../components/CTA.astro";
 const raiz = import.meta.env.BASE_URL;
 
 const clientes = [
-  { nombre: "Legend Horizon Living", logo: "https://celaya51.github.io/VEIA/images/logo-legend.webp", href: "https://legendtower.com.mx/" },
-  { nombre: "Uditore", logo: "https://celaya51.github.io/VEIA/images/logo-uditore-full.png", href: "https://uditore.mx/" },
-  { nombre: "Tocomadera", logo: "https://celaya51.github.io/VEIA/images/logo-tocomadera.png", href: "https://tocomadera.mx/" },
+  { nombre: "SANHER Bienes Raíces", logo: `${raiz}images/logo-sanher.svg`, href: "https://sanherbienesraices.com/" },
+  { nombre: "Legend Horizon Living", logo: `${raiz}images/logo-legend.webp`, href: "https://legendtower.com.mx/" },
+  { nombre: "Uditore", logo: `${raiz}images/logo-uditore-full.png`, href: "https://uditore.mx/" },
+  { nombre: "Tocomadera", logo: `${raiz}images/logo-tocomadera.png`, href: "https://tocomadera.mx/" },
   { nombre: "Ascendia", logo: `${raiz}img/ascendia-logo.png`, href: "https://ascendia.mx/", oscuro: true },
 ];
 
@@ -65,7 +66,7 @@ const plantillas = [
         </div>
         <div class="v-rejilla v-rejilla--3 revelar" style="margin-top:2.4rem">
           {plantillas.map((p) => (
-            <a class="v-tarjeta" href={`https://celaya51.github.io/VEIA/plantillas/${p.slug}/`} target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+            <a class="v-tarjeta" href={`${raiz}plantillas/${p.slug}/`} style="text-decoration:none;color:inherit">
               <span class="v-tarjeta__ico">{p.icono}</span>
               <h3>{p.nombre}</h3>
             </a>
