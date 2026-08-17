@@ -594,6 +594,42 @@ p {
   flex-direction: column;
   gap: 0.9rem;
 }
+
+/* ---- Tarjetas de paquetes ---- */
+.v-tarjeta--paquete {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  background: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  box-shadow: 0 14px 34px rgb(30 32 36 / 0.06);
+}
+.v-tarjeta--paquete h3 {
+  margin-bottom: 0;
+}
+.v-tarjeta--paquete .v-mini {
+  margin-top: 0.4rem;
+}
+.v-tarjeta--paquete .v-mini li {
+  font-size: 0.92rem;
+}
+.v-tarjeta--paquete .boton {
+  margin-top: auto;
+  align-self: flex-start;
+}
+.v-tarjeta__desc {
+  font-size: 0.98rem;
+  color: var(--gris-medio);
+}
+.v-tarjeta__pago {
+  font-size: 0.88rem;
+  color: var(--gris-medio);
+  margin-top: 0.2rem;
+}
+.v-tarjeta--destacado {
+  border: 2px solid var(--magenta);
+  box-shadow: 0 22px 55px rgb(242 0 109 / 0.14);
+}
 .v-tarjeta--opcion h3 {
   margin-bottom: 0;
 }
