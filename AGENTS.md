@@ -3,7 +3,7 @@
 Sitio de VEIA hecho con Astro. Se despliega en dos lugares:
 
 1. **GitHub Pages** — https://celaya51.github.io/veia-landing/ (workflow `.github/workflows/deploy.yml` en cada push a `main`). Base por defecto: `/veia-landing/`.
-2. **Producción** — https://veia.com.mx (VPS Contabo, Caddy, webroot `/var/www/veia`).
+2. **Producción** — https://veia.com.mx (VPS Hostinger, Caddy, webroot `/var/www/veia`).
 
 ## Desplegar a producción (VPS)
 

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Despliega veia-landing al VPS (producción: https://veia.com.mx).
 # Requisitos:
-#   - Clave SSH /home/mantis/.ssh/contabo-vps con acceso a debian@169.58.34.45
+#   - Clave SSH /home/mantis/.ssh/hostinger-vps con acceso a debian@2.25.128.172
 #   - sudo sin contraseña en el VPS (rsync remoto como root y chown a www-data)
 set -euo pipefail
 
-KEY="${1:-/home/mantis/.ssh/contabo-vps}"
-HOST="debian@169.58.34.45"
+KEY="${1:-/home/mantis/.ssh/hostinger-vps}"
+HOST="debian@2.25.128.172"
 WEBROOT="/var/www/veia"
 SSH_OPTS="-i ${KEY} -o IdentitiesOnly=yes"
 
